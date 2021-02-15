@@ -14,13 +14,19 @@ namespace Task7
 
             List<string> result = new List<string>();
 
-            for (int i = line.Length - 1; i >= 0; i--)
+            string[] reversed = line.Reverse().ToArray();      //  result is - >   7 8   4 5 6     1 2 3
+
+            for (int i = 0; i < line.Length; i++)
             {
-                string[] secLine = line[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string[] secLine = reversed[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 result.AddRange(secLine);
             }
 
-            Console.WriteLine(string.Join(' ', result));
+            foreach (string item in result)
+            {
+                Console.Write($"{item} ");
+            }
+            
         }
     }
 }
