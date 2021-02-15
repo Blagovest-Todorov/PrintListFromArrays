@@ -14,15 +14,10 @@ namespace Task7
 
             List<string> result = new List<string>();
 
-            for (int i = line.Length - 1; i >= 0; i--)           // 7 8  4 5 6   1 2 3
+            for (int i = line.Length - 1; i >= 0; i--)
             {
-                // create sec array with last element of the first array-
                 string[] secLine = line[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-                for (int j = 0; j < secLine.Length; j++)
-                {
-                    result.Add((secLine[j].ToString()));
-                }
+                result.AddRange(secLine);
             }
 
             Console.WriteLine(string.Join(' ', result));
